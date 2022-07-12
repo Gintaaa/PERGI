@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
+
+body{
+	margin: 0;
+	box-sizing: border-box;
+	overflow: hidden;
+	overflow-x: hidden; 
+}
+a{
+	text-decoration: none;
+	color: white;		
+}
+ul{
+	list-style-type: none;
+}
+
+h1{
+	font-size:5rem;
+}
+
+h2{
+	font-size:3rem;
+}
+
+button.btn{
+	border:none;
+	border-radius: 2rem;
+	padding: 1rem 3rem;
+	font-size: 1rem;
+	font-family: 
+	cursor:pointer;
+}
+
+.flex-row{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.nav{
+	background: linear-gradient(to top, #09203f 0%, #537895 100%);
+	padding: 0 2rem;
+	height: 0rem;
+	min-height: 15vh;
+	overflow: hidden;
+}
+
+.nav .menu{
+	justify-content: space-between;
+}
+
+.nav ul{
+	list-style-type: none;
+	display: flex;
+	margin: 0;
+}
+
+.nav ul .link{
+	padding: 1.5rem 3rem;
+	font-size: 1.1rem;
+	position: relative;
+}
+
+.nav ul .link :hover{
+	background-color: black; 
+}
+
+.nav ul .link a:hover{
+	color: white;
+}
+
+.nav .judul a{
+	font-size: 1.6rem;
+	padding:1rem 0;
+	display: block;
+	font-family: 'Fredericka the Great', cursive;
+	font-size: 2rem;
+}
+
+.nav .sosmed{
+	padding: 1.4 rem 0;
+	display: flex;
+}
+
+.nav .sosmed i{
+	padding: 0.3rem;
+	color: white;
+}
+
+.nav .sosmed i:hover{
+	color: #03fcf8;
+}
+
+/*---------------------------Hamburger Menu---------------------------*/
+
+.menu-toggle {
+	display: none;
+	flex-direction: column;
+	height: 20px;
+	top: 20px;
+	justify-content: space-between;
+	position: relative;
+}
+
+.menu-toggle input{
+	position: absolute;
+	width: 40px;
+	height: 28px;
+	left: -5px;
+	top: -3px;
+	opacity: 0;
+	cursor: pointer;
+	z-index: 2;
+}
+
+.menu-toggle span{
+	display: block;
+	width: 28px;
+	height: 3px;
+	background-color: white;
+	border-radius: 3px;
+	transition: all 1s;
+}
+
+/*---------------------------Hamburger Menu Animation---------------------------*/
+
+.menu-toggle span:nth-child(2) {
+	transform-origin: 0 0;
+}
+
+.menu-toggle span:last-child {
+	transform-origin: 0 0;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2) {
+	transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.menu-toggle input:checked ~ span:last-child{
+	transform: rotate(-45deg) translate(-1px, 0);
+}
+
+.menu-toggle input:checked ~ span:nth-child(3) {
+	opacity: 0;
+	transform: scale(0);
+}
+
+main .title{
+	background: url(../images/library.jpeg);
+	background-size: cover;
+	height: 110vh;
+	min-height: 20rem;
+	display: flex;
+	justify-content: center;
+}
+
+main .title .background{
+	padding-top: 6.5rem;
+	text-align: center;
+	color: #d4601e;
+	text-shadow: 4px 4px 4px black;
+}
+
+main .title h1,h2{
+	margin:1rem;
+}
+
+main .title .btn{
+	margin: 1,8rem;
+	background:linear-gradient(to right, #d7d2cc 0%, #304352 100%);;
+}
+
+main .title .btn:hover{
+	background: transparent;
+	border: 1px solid white;
+}
+
+/*-----------------------------Tampilan Responsive------------------------------*/
+
+@media only screen and (max-width: 768px){
+	.nav {
+		background:linear-gradient(to top, #434343 0%, black 100%);
+	}
+	.nav ul{
+		position: absolute;
+		right: 0;
+		top: 0;
+		height: 100vh;
+		width: 100%;
+		flex-direction: column;
+		background: linear-gradient(to top, #9795f0 0%, #fbc8d4 100%);
+		align-items: center;
+		justify-content: space-evenly;
+		transform: translateX(100%);
+		transition: all 1s;
+	}
+	.nav ul.slide {
+		transform: translateX(0);
+	}
+	.nav .sosmed{
+		flex-direction: row;
+		position: absolute;
+		right: 0%;
+		left: 50%;
+		top: 2%;
+		height: 100vh;
+		justify-content: space-evenly;
+		transform: translateX(100%);
+	}
+	.menu-toggle{
+		display: flex;
+	}
+} 
